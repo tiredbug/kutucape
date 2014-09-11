@@ -1,9 +1,15 @@
+<?php
+/*
+Template Name: Fullwidth Template
+*/
+?>
+
 <?php get_template_part('templates/header'); ?>
 
 <div class="container">
   <div class="row">
     
-    <div class="col-sm-8">
+    <div class="col-sm-12">
       <div id="content" role="main">
         <?php if(have_posts()): while(have_posts()): the_post();?>
         <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
@@ -19,10 +25,6 @@
         <?php endif;?>
       </div><!-- #content -->
     </div>
-    
-    <div class="col-sm-4 sidebar" id="sidebar" role="navigation">
-        <?php get_template_part('templates/sidebar'); ?>
-    </div><!-- /.col-sm-4 .sidebar -->
     
   </div><!-- .row -->
 </div><!-- .container -->
