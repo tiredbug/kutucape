@@ -146,10 +146,7 @@ $json_string = file_get_contents("http://api.bootswatch.com/3/");
 $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
-  $styles = array( 
-    $themes->name[0] => $themes->css''
-   );
-  }
+
   $labels = array_flip( $styles );
   $wp_customize->add_section(
     'bootswatch_themes',
@@ -171,10 +168,13 @@ $parsed_json = json_decode($json_string);
       'section'		=> 'bootswatch_themes',
       'label'		=> __( 'Bootswatch Theme', 'theme' ),
       'type'		=> 'select',
-      'choices'		=> $labels,
+      'choices'		=> array (
+      	$themes->name => $themes->css,
+      	),
       'settings'	=> 'bootswatch_style'
     )
   );
+ }
 }
 add_action( 'customize_register', 'bootswatch_register_theme_customizer' );
 
