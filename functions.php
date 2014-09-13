@@ -147,7 +147,9 @@ $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
   $styles = array( 
-    $themes->name => $themes->css,
+    $themes->name[0] => $themes->css[0],
+    $themes->name[1] => $themes->css[1],
+    $themes->name[2] => $themes->css[2]
    );
   }
   $labels = array_flip( $styles );
