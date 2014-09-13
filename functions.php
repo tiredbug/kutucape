@@ -146,8 +146,8 @@ $json_string = file_get_contents("http://api.bootswatch.com/3/");
 $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
-  $styles = array(
-    '$themes->name',
+  $styles = array( 
+    $themes->name => $themes->css,
    );
   }
   $labels = array_flip( $styles );
