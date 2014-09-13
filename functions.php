@@ -147,7 +147,6 @@ $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
 
-  $labels = array_flip( $styles );
   $wp_customize->add_section(
     'bootswatch_themes',
     array(
@@ -169,7 +168,7 @@ $parsed_json = json_decode($json_string);
       'label'		=> __( 'Bootswatch Theme', 'theme' ),
       'type'		=> 'select',
       'choices'		=> array (
-      	$themes->name => $themes->css,
+      	$themes->css => $themes->name,
       	),
       'settings'	=> 'bootswatch_style'
     )
