@@ -147,7 +147,7 @@ $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
   $styles = array( 
-    '' . $themes->name . '' => '' . $themes-css . '',
+    '$themes->name' => '$themes-css',
    );
   $labels = array_flip( $themes->name => $themes->css );
   $wp_customize->add_section(
