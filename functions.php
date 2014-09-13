@@ -142,11 +142,6 @@ add_action('wp_enqueue_scripts', 'theme_enqueues', 100);
 
 // Bootswatch Costumizer
 function bootswatch_register_theme_customizer( $wp_customize ){
-$json_string = file_get_contents("http://api.bootswatch.com/3/");
-$parsed_json = json_decode($json_string);
-
-  foreach($parsed_json->themes as $themes) {
-
   $wp_customize->add_section(
     'bootswatch_themes',
     array(
@@ -168,13 +163,13 @@ $parsed_json = json_decode($json_string);
       'label'		=> __( 'Bootswatch Theme', 'theme' ),
       'type'		=> 'select',
       'choices'		=> array (
-      	$themes->css[0] => 'Amelia',
-      	$themes->css[1] => 'United',
+      	'//netdna.bootstrapcdn.com/bootswatch/latest/amelia/bootstrap.min.css' => 'Amelia',
+      	'//netdna.bootstrapcdn.com/bootswatch/latest/united/bootstrap.min.css' => 'United',
+      	'//netdna.bootstrapcdn.com/bootswatch/latest/yeti/bootstrap.min.css' => 'Yeti',
       	),
       'settings'	=> 'bootswatch_style'
     )
   );
- }
 }
 add_action( 'customize_register', 'bootswatch_register_theme_customizer' );
 
