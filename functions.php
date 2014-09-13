@@ -149,7 +149,7 @@ $parsed_json = json_decode($json_string);
   $styles = array( 
     '' . $themes->name . '' => '' . $themes-css . '',
    );
-  $labels = array_flip( $styles );
+  $labels = array_flip( $themes->name => $themes->css );
   $wp_customize->add_section(
     'bootswatch_themes',
     array(
