@@ -168,7 +168,8 @@ $parsed_json = json_decode($json_string);
       'label'		=> __( 'Bootswatch Theme', 'theme' ),
       'type'		=> 'select',
       'choices'		=> array (
-      	$themes->css => $themes->name,
+      	$themes->css => 'Amelia',
+      	$themes->css => 'United',
       	),
       'settings'	=> 'bootswatch_style'
     )
