@@ -147,7 +147,8 @@ $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
   $styles = array( 
-    '$themes->name' => '$themes->css',
+    'United' => '//netdna.bootstrapcdn.com/bootswatch/3.1.1/united/bootstrap.min.css',
+    'Yeti' => '//netdna.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css',
    );
   }
   $labels = array_flip( $styles );
