@@ -112,7 +112,7 @@ function theme_enqueues()
   wp_register_style('bootswatch_style', get_theme_mod('bootswatch_style'));
   wp_enqueue_style('bootswatch_style');
 
-  wp_register_style('style', get_template_directory_uri() . '/style.css');
+  wp_register_style('style', get_template_directory() . '/style.css');
   wp_enqueue_style('style');
 
   wp_deregister_script('jquery');
