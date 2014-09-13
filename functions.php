@@ -147,8 +147,9 @@ $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
   $styles = array( 
-    $themes->name => $themes->css\n,
+    $themes->name => $themes->css,
    );
+  }
   $labels = array_flip( $styles );
   $wp_customize->add_section(
     'bootswatch_themes',
@@ -174,7 +175,6 @@ $parsed_json = json_decode($json_string);
       'settings'	=> 'bootswatch_style'
     )
   );
- }
 }
 add_action( 'customize_register', 'bootswatch_register_theme_customizer' );
 
