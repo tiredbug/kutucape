@@ -147,10 +147,8 @@ $parsed_json = json_decode($json_string);
 
   foreach($parsed_json->themes as $themes) {
   $styles = array( 
-    'United' => '//netdna.bootstrapcdn.com/bootswatch/3.1.1/united/bootstrap.min.css',
-    'Yeti' => '//netdna.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css',
+    '' . $themes->name . '' => '' . $themes-css . '',
    );
-  }
   $labels = array_flip( $styles );
   $wp_customize->add_section(
     'bootswatch_themes',
@@ -176,6 +174,7 @@ $parsed_json = json_decode($json_string);
       'settings'	=> 'bootswatch_style'
     )
   );
+ }
 }
 add_action( 'customize_register', 'bootswatch_register_theme_customizer' );
 
